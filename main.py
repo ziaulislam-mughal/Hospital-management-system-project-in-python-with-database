@@ -11,6 +11,18 @@ import mysql.connector # used for connecting to MySQL database
 
 class Hospital:
     def __init__(self,root):
+    """
+    Description:
+
+    Parameters
+    ----------
+    :param self: INSERT DESCRIPTION
+    :type self: type
+    :param root: INSERT DESCRIPTION
+    :type root: type
+
+    .
+    """
         self.root = root 
         self.root.title("Hospital Management System") # set title of the window
         self.root.geometry("1350x700+0+0") # set size of the window
@@ -30,6 +42,111 @@ class Hospital:
         #Dataframe Right 
         Dataframe_right = LabelFrame(Datafram , text=("Prescription" ) , bd = 4 , relief=RIDGE , fg = "black", font=("times new roman",10,"bold"), padx= 18)
         Dataframe_right.place(x = 860 ,y = 6 , width = 450, height= 350 )
+
+
+        #button frame
+        buttonframe = Frame(self.root , bd = 15 , relief = RIDGE)
+        buttonframe.place(x=0 , y=480 , width = 1350 , height = 70)
+
+        #details frame 
+        detailframe = Frame(self.root , bd = 15 , relief = RIDGE)
+        detailframe.place(x=0 , y=550 , width = 1350 , height = 150)
+
+        #Entites in Dataframe in left side
+
+        #Name of Tablets
+
+        name_of_tablets = Label(Dataframe_left,text=("Name of Tablet"),font=("times new roman" , 10 , "bold"),padx=0,pady=6)
+        name_of_tablets.grid(row=0,column=0)
+    
+        option_of_tablets = ttk.Combobox(Dataframe_left, font=("times new roman" , 10 , "bold"),width=33)
+        option_of_tablets['values'] = ("Brufen","Paracetamol","Dolo 650","Crocin","Disprin")
+        option_of_tablets.grid(row=0,column=1)
+
+        #Reference Number
+
+        reference_no = Label(Dataframe_left , text=("Reference No") , font=("times new roman" , 10 , "bold"),padx=0,pady=6)
+        reference_no.grid(row=1,column=0,sticky=W)
+        txtinref = Entry(Dataframe_left , font=("times new roman" , 10 , "bold") , width=35)
+        txtinref.grid(row=1,column=1)
+
+        # Dose
+
+        dose = Label(Dataframe_left , text=("Dose") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        dose.grid(row=2 ,column=0 , sticky=W)
+        input_dose = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_dose.grid(row=2 , column=1)
+
+        
+        # No of Tablets 
+
+        nooftablets = Label(Dataframe_left , text=("No of Tablets") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        nooftablets.grid(row=3 ,column=0 , sticky=W)
+        input_nooftablets = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_nooftablets.grid(row=3 , column=1)
+
+        # lot 
+        
+        dose = Label(Dataframe_left , text=("Dose") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        dose.grid(row=2 ,column=0 , sticky=W)
+        input_dose = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_dose.grid(row=2 , column=1)
+
+        # issue date 
+
+        issue_date = Label(Dataframe_left , text=("Issue Date") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        issue_date.grid(row=3 ,column=0 , sticky=W)
+        input_issue_date = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_issue_date.grid(row=3 , column=1)
+
+        # exp date 
+
+        expire_date = Label(Dataframe_left , text=("Expire Date") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        expire_date.grid(row=4 ,column=0 , sticky=W)
+        input_expire_date = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_expire_date.grid(row=4 , column=1)
+
+
+        # daily dose 
+
+        daily_dose = Label(Dataframe_left , text=("Daily Dose") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        daily_dose.grid(row=5 ,column=0 , sticky=W)
+        input_daily_dose = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_daily_dose.grid(row=5 , column=1)
+
+
+        # side effect 
+
+        side_effect  = Label(Dataframe_left , text=("Side Effect") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        side_effect.grid(row=6 ,column=0 , sticky=W)
+        input_side_effect = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_side_effect.grid(row=6 , column=1)
+
+        # furthar information 
+
+        furthar_information = Label(Dataframe_left , text=("Furthar Information") , font=("times new roman" , 10 , "bold"), padx=2 , pady=6)
+        furthar_information.grid(row=0 ,column=2 , sticky=W)
+        input_furthar_information = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
+        input_furthar_information.grid(row=0 , column=3)
+
+        # blood pressure 
+        blood_pressure = Label(Dataframe_left,text=("Blood Pressure"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        blood_pressure.grid(row=1,column=2)
+        input_blood_pressure = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        input_blood_pressure.grid(row=1,column=3)
+        # storage advice
+        # medication 
+        # patient id 
+        # NHS Number 
+        # Patient Name 
+        # Date of Birth 
+        # Patient Address 
+        
+
+
+
+    
+    
 
         
 
