@@ -11,18 +11,6 @@ import mysql.connector # used for connecting to MySQL database
 
 class Hospital:
     def __init__(self,root):
-    """
-    Description:
-
-    Parameters
-    ----------
-    :param self: INSERT DESCRIPTION
-    :type self: type
-    :param root: INSERT DESCRIPTION
-    :type root: type
-
-    .
-    """
         self.root = root 
         self.root.title("Hospital Management System") # set title of the window
         self.root.geometry("1350x700+0+0") # set size of the window
@@ -124,23 +112,69 @@ class Hospital:
 
         # furthar information 
 
-        furthar_information = Label(Dataframe_left , text=("Furthar Information") , font=("times new roman" , 10 , "bold"), padx=2 , pady=6)
-        furthar_information.grid(row=0 ,column=2 , sticky=W)
+        furthar_information = Label(Dataframe_left , text=("Furthar Information") , font=("times new roman" , 10 , "bold"), padx=0 , pady=6)
+        furthar_information.grid(row=7 ,column=0 , sticky=W)
         input_furthar_information = Entry(Dataframe_left,font = ("times new roman" , 10 , "bold"),width=35)
-        input_furthar_information.grid(row=0 , column=3)
+        input_furthar_information.grid(row=7 , column=1)
 
         # blood pressure 
+
         blood_pressure = Label(Dataframe_left,text=("Blood Pressure"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
-        blood_pressure.grid(row=1,column=2)
+        blood_pressure.grid(row=0,column=2)
         input_blood_pressure = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
-        input_blood_pressure.grid(row=1,column=3)
+        input_blood_pressure.grid(row=0,column=3)
+
+                
         # storage advice
+
+        storage_advice = Label(Dataframe_left,text=("Storage Advice"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        storage_advice.grid(row=1,column=2)
+        input_storage_advice = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        input_storage_advice.grid(row=1,column=3)
+
         # medication 
+        
+        medication = Label(Dataframe_left,text=("Medication"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        medication.grid(row=2,column=2)
+        input_med = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        input_med.grid(row=2,column=3)
+
         # patient id 
+        
+
+        patient_id = Label(Dataframe_left,text=("Patient id "),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        patient_id.grid(row=3,column=2)
+        patient_id_input = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        patient_id_input.grid(row=3,column=3)
+
         # NHS Number 
+
+        nhs_number = Label(Dataframe_left,text=("NHS Number"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        nhs_number.grid(row=4,column=2)
+        nhs_number_input = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        nhs_number_input.grid(row=4,column=3)
+
         # Patient Name 
+
+        patient_name = Label(Dataframe_left,text=("Patient Name"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        patient_name.grid(row=5,column=2)
+        input_patient_name = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        input_patient_name.grid(row=5,column=3)
+    
         # Date of Birth 
-        # Patient Address 
+        
+        date_of_birth = Label(Dataframe_left,text=("Date of Birth"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        date_of_birth.grid(row=6,column=2)
+        input_dob = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        input_dob.grid(row=6,column=3)
+
+        # Patient Address
+
+        patient_address = Label(Dataframe_left,text=("Patient Address"),font=("times new roman",10,"bold"),padx=2 ,pady=6)
+        patient_address.grid(row=7,column=2)
+        input_PA = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
+        input_PA.grid(row=7,column=3)
+
         
 
 
