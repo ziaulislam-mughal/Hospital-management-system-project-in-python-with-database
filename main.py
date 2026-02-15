@@ -175,7 +175,14 @@ class Hospital:
         input_PA = Entry(Dataframe_left,font=("times new roman",10,"bold"),width=35)
         input_PA.grid(row=7,column=3)
 
+
+        #===================================Dataframe Right Side========================================================
+
+        self.text_prec = Text(Dataframe_right,font=("times new roman",10,"bold"),width = 55, height= 20 ,padx=2,pady=6)
+        self.text_prec.grid(row=0,column=0)
+
         
+
 
 
 
