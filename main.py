@@ -27,6 +27,12 @@ class Hospital:
         Dataframe_left = LabelFrame(Datafram , text=("Patient Information") , bd = 4 , relief = RIDGE , font=("times new roman",10,"bold") , fg = 'black' , padx = 18)
         Dataframe_left.place(x = 0 , y = 6, width = 850 , height= 350)
 
+        #Dataframe Right 
+        Dataframe_right = LabelFrame(Datafram , text=("Prescription" ) , bd = 4 , relief=RIDGE , fg = "black", font=("times new roman",10,"bold"), padx= 18)
+        Dataframe_right.place(x = 860 ,y = 6 , width = 450, height= 350 )
+
+        
+
 
 
 
