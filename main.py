@@ -181,6 +181,38 @@ class Hospital:
         self.text_prec = Text(Dataframe_right,font=("times new roman",10,"bold"),width = 55, height= 20 ,padx=2,pady=6)
         self.text_prec.grid(row=0,column=0)
 
+
+
+        #===================================Button Frame========================================================
+
+        prescription_btn = Button(buttonframe,text=("Prescription"),font=("times new roman",12,"bold"),width=23,bg="black",fg="gold",padx=2,pady=6)
+        prescription_btn.grid(row=0,column=0)
+    
+        prescription_data = Button(buttonframe,text=("Prescription Data"),font=("times new roman",12,"bold"),width=23,bg="black",fg="gold",padx=2,pady=6)
+        prescription_data.grid(row=0,column=1)
+    
+
+        update_btn = Button(buttonframe,text=("Update"),font=("times new roman",12,"bold"),width=23,bg="black",fg="gold",padx=2,pady=6)
+        update_btn.grid(row=0,column=2)
+
+
+        delet_btn = Button(buttonframe,text=("Delete"),font=("times new roman",12,"bold"),width=23,bg="black",fg="gold",padx=2,pady=6)
+        delet_btn.grid(row=0,column=3)
+    
+        clear_btn = Button(buttonframe,text=("Clear"),font=("times new roman",12,"bold"),width=23,bg="black",fg="gold",padx=2,pady=6)
+        clear_btn.grid(row=0,column=4)
+    
+        exit_btn = Button(buttonframe,text=("Exit"),font=("times new roman",12,"bold"),width=23,bg="black",fg="gold",padx=2,pady=6)
+        exit_btn.grid(row=0,column=5)
+    
+
+
+
+
+
+
+        
+
         
 
 
