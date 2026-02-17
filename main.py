@@ -296,33 +296,8 @@ class Hospital:
 
 
         # ================== Functions Declarity  ========================
-        def iprescriptiondata(self):
-
-        
-
-
-        
-
-
-
-
-
-
-        
-
-        
-
-
-
-
-    
-    
-
-        
-
-
-
-
+        def prescriptiondata(self):
+            pass 
 root = Tk()
 obj = Hospital(root)
 root.mainloop()
