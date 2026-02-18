@@ -216,6 +216,8 @@ class Hospital:
         self.hospital_table['show'] = 'headings'
         self.hospital_table.pack(fill=BOTH, expand=1)
 
+        self.fetch_data()
+
     # ============= Database Function ================
     def iprescriptiondata(self):
         if self.nameoftablets.get() == "" or self.ref.get() == "":
@@ -249,6 +251,7 @@ class Hospital:
                     self.patient_address.get()
                 ))
                 conn.commit()
+                self.fetch_data()
                 conn.close()
                 messagebox.showinfo("Success", "Record has been inserted")
             
@@ -257,6 +260,35 @@ class Hospital:
             
             except Exception as es:
                 messagebox.showerror("Error", f"Could not connect to database: {str(es)}")
+
+    def fetch_data(self):
+        # 1. Database se connection banane ke liye (taake hum data le sakein)
+        conn = mysql.connector.connect(host="localhost", username="root", password="WLAN703A9F", database="mydata")
+        
+        # 2. Cursor banana (Cursor ek tool hai jo SQL queries ko run karta hai)
+        my_cursor = conn.cursor()
+        
+        # 3. SQL Query run karna: "select * from hospital" ka matlab hai "hospital table ka saara data le aao"
+        my_cursor.execute("select * from hospital")
+        
+        # 4. Saara data jo database se mila, usay 'rows' naam ke variable mein store karna
+        rows = my_cursor.fetchall()
+        
+        # 5. Check karna ki kya database mein koi data hai bhi ya nahi?
+        if len(rows) != 0:
+            
+            # 6. Purana data hatana: Agar table mein pehle se kuch dikh raha hai to usay saaf kar do taake duplication na ho
+            self.hospital_table.delete(*self.hospital_table.get_children())
+            
+            # 7. Loop chalana: Ek-ek karke saari lines ko table (GUI) mein daalna
+            for i in rows:
+                self.hospital_table.insert("", END, values=i)
+            
+            # 8. Changes ko final karna (Commit data fetch mein zaroori nahi hota par connection refresh rehta hai)
+            conn.commit()
+        
+        # 9. Connection band karna taake PC slow na ho
+        conn.close()
 
 if __name__ == "__main__":
     root = Tk()
