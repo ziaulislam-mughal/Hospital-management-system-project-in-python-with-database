@@ -445,6 +445,7 @@ class Hospital:
 
         btnDelete = Button(
             buttonframe,
+            command=self.delect_data,
             text="Delete",
             font=("times new roman", 12, "bold"),
             width=22,
@@ -457,6 +458,7 @@ class Hospital:
 
         btnClear = Button(
             buttonframe,
+            command= self.clear_data,
             text="Clear",
             font=("times new roman", 12, "bold"),
             width=22,
@@ -469,6 +471,7 @@ class Hospital:
 
         btnExit = Button(
             buttonframe,
+            command=self.exit,
             text="Exit",
             font=("times new roman", 12, "bold"),
             width=22,
@@ -742,6 +745,62 @@ class Hospital:
         self.txtPrescription.insert(END, f"Medication:\t\t\t{self.medication.get()}\n")
         self.txtPrescription.insert(END, f"Patient ID:\t\t\t{self.patient_id.get()}\n")
         self.txtPrescription.insert(END, f"NHS Number:\t\t\t{self.nhs_number.get()}\n")
+
+
+# ===================== clear function ==========================
+
+    def clear_data(self):
+        self.nameoftablets.set("")
+        self.ref.set("")
+        self.dose.set("")
+        self.nooftablets.set("")
+        self.lot.set("")
+        self.issuedate.set("")
+        self.expdate.set("")
+        self.daily_dose.set("")
+        self.side_effect.set("")
+        self.further_information.set("")
+        self.blood_pressure.set("")
+        self.storage_advice.set("")
+        self.medication.set("")
+        self.patient_id.set("")
+        self.nhs_number.set("")
+        self.patient_name.set("")
+        self.dob.set("")
+        self.patient_address.set("")
+        self.txtPrescription.delete("1.0", END)
+
+# ====================== Delete Function =========================
+    def delect_data(self):
+        if self.ref.get() == "":
+            messagebox.showerror("Error", "Reference No is required to delete")
+        else:
+            try:
+                conn = mysql.connector.connect(
+                    host="localhost",
+                    username="root",
+                    password="WLAN703A9F",
+                    database="mydata",
+                )
+                my_cursor = conn.cursor()
+                my_cursor.execute(
+                    "DELETE FROM hospital WHERE Reference_No=%s", (self.ref.get(),)
+                )
+                conn.commit()
+                self.fetch_data()
+                conn.close()
+                messagebox.showinfo("Delete", "Record has been deleted successfully")
+
+            except Exception as es:
+                messagebox.showerror("Error", f"Due to: {str(es)}")
+#===================== Exit Function =========================
+
+    def exit(self):
+        op = messagebox.askyesno("Exit", "Do you really want to exit?")
+        if op > 0:
+            self.root.destroy()
+        else:
+            return
 
 
 if __name__ == "__main__":
