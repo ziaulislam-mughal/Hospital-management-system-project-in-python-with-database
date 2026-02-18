@@ -406,6 +406,7 @@ class Hospital:
         # ============= Buttons ==========================
         btnPrescription = Button(
             buttonframe,
+            command=self.precription_show,
             text="Prescription",
             font=("times new roman", 12, "bold"),
             width=22,
@@ -720,6 +721,27 @@ class Hospital:
             self.patient_name.set(row[15])
             self.dob.set(row[16])
             self.patient_address.set(row[17])
+
+
+    def precription_show(self):
+        self.txtPrescription.insert(END, f"Patient Name:\t\t{self.patient_name.get()}\n")
+        self.txtPrescription.insert(END, f"Date of Birth:\t\t{self.dob.get()}\n")
+        self.txtPrescription.insert(END, f"Patient Address:\t\t{self.patient_address.get()}\n")
+        self.txtPrescription.insert(END, f"Name of Tablets:\t\t{self.nameoftablets.get()}\n")
+        self.txtPrescription.insert(END, f"Reference No:\t\t{self.ref.get()}\n")
+        self.txtPrescription.insert(END, f"Dose:\t\t{self.dose.get()}\n")
+        self.txtPrescription.insert(END, f"No of Tablets:\t\t{self.nooftablets.get()}\n")   
+        self.txtPrescription.insert(END, f"Lot:\t\t{self.lot.get()}\n")
+        self.txtPrescription.insert(END, f"Issue Date:\t\t{self.issuedate.get()}\n")
+        self.txtPrescription.insert(END, f"Exp Date:\t\t{self.expdate.get()}\n")
+        self.txtPrescription.insert(END, f"Daily Dose:\t\t{self.daily_dose.get()}\n")
+        self.txtPrescription.insert(END, f"Side Effect:\t\t{self.side_effect.get()}\n")
+        self.txtPrescription.insert(END, f"Further Information:\t\t{self.further_information.get()}\n")
+        self.txtPrescription.insert(END, f"Blood Pressure:\t\t{self.blood_pressure.get()}\n")
+        self.txtPrescription.insert(END, f"Storage Advice:\t\t{self.storage_advice.get()}\n")
+        self.txtPrescription.insert(END, f"Medication:\t\t{self.medication.get()}\n")
+        self.txtPrescription.insert(END, f"Patient ID:\t\t{self.patient_id.get()}\n")
+        self.txtPrescription.insert(END, f"NHS Number:\t\t{self.nhs_number.get()}\n")
 
 
 if __name__ == "__main__":
